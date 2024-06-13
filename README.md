@@ -1,351 +1,71 @@
-# ruby ddd
+# IBR\_飲食 各サービスのリポジトリ管理
 
-## Get Starting
+リポジトリ（GitHub）：https://github.com/ibj-labo
 
-<code>
-bundle exec rackup config.ru
-</code>
+![Screenshot 2024-06-10 at 11.20.45.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/cd3e7b8b-acfa-494d-9b4e-166ac30e6b36/763ac292-e8d0-4c00-9926-d2e2e654fbcd/Screenshot_2024-06-10_at_11.20.45.png)
 
-## 各層（ディレクトリ）の説明
+# サービス概要と主要な仕様（機能）
 
-## presentation 層
+- IBR は、「web（飲食）」「photo」「omiai」の 3 つの管理システムがある
 
-### handler
+※「omiai」は近々停止予定のため、ほとんど稼働していない。
 
-ルーティングと入出力を扱う。
-入力値のバリデーションも必須項目と型が合ってるか位はここで扱います
+- 「web（飲食）」には、「ToC 画面」「本部管理画面」「店舗管理画面」の 3 つの画面がある
+- 「web（飲食）」と「photo」は、バックエンド（API）を共通で使用している
+- 「ToC 画面」に店舗を表示するためには、「本部管理画面」で、店舗に「利用サービス登録」を行う必要がある
+- 「web（飲食）」でユーザーが予約する際の「予約の種類」は、リクエスト予約と即時予約がある
+  - リクエスト予約：IBR システムを使用した予約（IBR の予約 API を使用して予約します）
+    - 店舗を予約するボタンの表示：予約確認へ進む
+  - 即時予約：テーブルチェックシステムを使用した予約（TableCheck API を使用して予約します）
+    - 店舗を予約するボタンの表示：予約サイトに移動する
 
-## usecase 層
+# 主要仕様のミニマム業務フロー図
 
-### usecase
+## [管理者フロー]利用サービス登録 ON/OFF → 店舗の表示/非表示
 
-domain 層とクエリサービスの機能を組み合わせて、アクターのユースケース(アクション)を実現する。組み合わせるだけなので基本的に薄い実装になります。
-１アクター１ユースケースなので、現在は１クライアントアプリ１ユースケースで実装しています。
+![Screenshot 2024-06-13 at 11.30.02.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/cd3e7b8b-acfa-494d-9b4e-166ac30e6b36/d311cfd6-67ec-41da-bc30-0e1332b10330/Screenshot_2024-06-13_at_11.30.02.png)
 
-### query service
+## [ユーザーフロー]店舗の予約（リクエスト予約/即時予約）と使用される予約システム
 
-コマンドクエリ分離（CQRS）をしているので、参照系の処理はこのファイルで扱います。
-１ユースケース、１クエリサービスとしています。
+＜＜＜ 準備中：「店舗の予約（リクエスト予約/即時予約）と使用される予約システム（主要仕様のミニマム業務フロー図）画像」 ＞＞＞
 
-## domain 層
+# **開発・運用環境**
 
-### model
+- 開発、テスト、ステージング、本番環境の構成
+  - ローカル環境：自身の PC で立ち上げる
+  - ステージング環境：以下「各サービスの URL」を参照
+  - 本番環境：以下「各サービスの URL」を参照
 
-ビジネスロジックを詰め込んだファイル。
-domain model だけを確認すれば、どんなビジネスルールが存在するか理解できるように実装する。
-また完全コンストラクタとしているので、常に不変で有ることと、
-インスタンス化されてから消えるまで、常に正しく有り続けます。
+### 各サービスの URL
 
-### value object
+[IBR URL -web-](https://www.notion.so/IBR-URL-web-bf013df3eeff4dfdb26eb2ec9ae273f7?pvs=21)
 
-値オブジェクト。リポジトリ関連の値を担当するオブジェクトになります。
-リポジトリ関連のバリデーションはこのファイルに全て実装します。
-テーブルのプロパティではなく、あくまで値である事に注意してください。
-値オブジェクトもまた、完全コンストラクタになります。
+[IBR URL -restaurant-](https://www.notion.so/IBR-URL-restaurant-78d37d1985a545899ae486f623603be6?pvs=21)
 
-### repository
+[IBR URL -photo-](https://www.notion.so/IBR-URL-photo-12001b7978c64ca5bdf5d14dab84b490?pvs=21)
 
-技術的関心事を詰め込んだファイル。DB 登録、メール送信等、
-技術的且つ具体的な処理はこのファイルに実装します。
-また、集約としても機能させているので、1 集約 1 リポジトリとなっています。
+[IBR URL -お見合いラウンジ-](https://www.notion.so/IBR-URL-9501fd3482004653a0934fe561e7e475?pvs=21)
 
-### domain service
+### 環境構築とリリース手順
 
-ドメインロジックではあるが、他の domain 層に置き場所がない処理を担当します。
-便利ではありますが、基本的にはモデルや値オブジェクトに実装できないか、
-良く考えてから使用してください。
-また、１リポジトリ１ドメインサービスで実装してください。
+[【IBR\_飲食】環境構築とリリース手順](https://www.notion.so/IBR_-42c9d90984754d069a0643f50621b9b6?pvs=21)
 
-## 補足説明
+# **プロジェクト管理**
 
-### レイヤードアーキテクチャ
+- スケジュールやマイルストーン
+  - プロジェクト管理ツール（Notion）：[予約システム](https://www.notion.so/320457b1d5b7448d9fcbd21590a15b27?pvs=21)
+- リスク管理と対応策
+  - 振り返り（バグ対応）：[](https://www.notion.so/60a3eec9049a4d6f9a63216795b2eff6?pvs=21)
+  - ポストモーテム（障害対応）：[💚 ポストモーテム](https://www.notion.so/1f446050c5934db2a123da47df954458?pvs=21)
+- 役割分担と責任者
+  - タスク起票：ディレクター、開発者
+  - タスク進捗管理：ディレクター
 
-このアプリケーションはレイヤードアーキテクチャを意識して作られています。
-各層の依存関係は、presentation → usecase → domain/repository → domain/model
-となっています。
+# **テスト計画**
 
-### 集約パターン
+- テスト方法：Excel にまとめたテストケースに基づきテストを実施
+- 品質基準と合格基準：開発者とディレクターのテスト実施結果が全て OK の場合、テスト合格
 
-1repository 1 集約。
-集約とは、各モデルをトランザクション境界で区切ってまとめた物になります。
-簡単に言うとデータの整合性を担保したいまとまりになります。
-＊1table 1 集約ではありません。
+## テストケースを管理する Excel ファイル
 
-### CQRS パターン
-
-CRUD の R（クエリ）と CUD（コマンド）を明確に分けて実装するパターンになります。
-コマンドは集約としてリポジトリから、クエリはクエリサービスに実装して下さい。
-
-# 開発環境
-
-開発環境用.env
-
-## ビルド
-
-`docker-compose build`
-
-## 起動
-
-`docker-compose up -d`
-
-### ビルドしつつ起動
-
-`docker-compose up -d --build`
-
-## 再起動
-
-`docker-compose restart`
-
-## 終了
-
-`docker-compose down`
-
-## コンテナに入る
-
-### web
-
-`docker-compose exec web bash`
-
-### db
-
-`docker-compose exec db bash`
-
-## テスト実行
-
-テーブルを作り直してからテスト実行。
-
-使っているシェルによっては rake 実行時に怒られるので以下のチェックしてテーブルを作り直してください
-
-- bash を使用している場合
-
-```bash
-docker-compose exec -e RACK_ENV=test web bundle exec rake db:migrate[0] &&
-docker-compose exec -e RACK_ENV=test web bundle exec rake db:migrate &&
-docker-compose exec -e RACK_ENV=test web bundle exec parallel_rspec
-```
-
-- zsh を使用している場合
-
-```zsh
-docker-compose exec -e RACK_ENV=test web bundle exec rake 'db:migrate[0]' &&
-docker-compose exec -e RACK_ENV=test web bundle exec rake db:migrate &&
-docker-compose exec -e RACK_ENV=test web bundle exec parallel_rspec
-```
-
-行数指定のテスト実行
-
-```bash
-docker-compose exec -e RACK_ENV=test web bundle exec rspec spec/domain/repository/restaurant_repository_spec.rb:1006
-```
-
-## Rubocop 実行
-
-Ç
-
-### 違反の部分を.rubocop_todo.yml に記録する
-
-`docker-compose exec web bundle exec rubocop --auto-gen-config`
-
-### 違反の部分を自動で修正
-
-`docker-compose exec web bundle exec rubocop -a`
-
-## migration 手動実行
-
-`docker-compose exec -e RACK_ENV=development web bundle exe rake db:migrate`
-
-### バージョンを指定して実行
-
-`VERSION` は `migrations` のファイル名の先頭の数字文字列のこと。
-
-`docker-compose exec -e RACK_ENV=development web bundle exe rake db:migrate[VERSION]`
-
-初期状態（何もテーブルがない状態）にリセットするには `VERSION` を `0` で実行
-
-## 開発、テスト環境向け初期データ登録
-
-対象のテーブルが空のときのみ insert する
-
-### Restaurant（レストラン）用の初期データ
-
-`docker-compose exec -e RACK_ENV=development web bundle exec rake db:initialdata`
-
-### Photo Studio（フォトスタジオ）用の初期データ
-
-`docker-compose exec -e RACK_ENV=development web bundle exec rake db:photo_initialdata`
-
-### zsh で migration を手動実行
-
-- zsh で migration を手動実行する場合には、`zsh: no matches found: db:migrate[VERSION]`というエラーが発生します
-  - その場合は rake コマンド以下をシングルクウォートで囲むと実行できます
-  - `docker-compose exec -e RACK_ENV=development web bundle exec rake 'db:migrate[VERSION]'`
-
-# Migration について
-
-## ルール
-
-- `/db/migrations` 以下に migration ファイルを保存
-- ファイル名は `XXYYYYMMDDHHMMSS_〜.rb`
-  - `YYYYMMDDHHMMSS` は作成日時の年月日時分秒の 14 桁
-  - `XX`は作成日時をミスしたために日付調整する値を追加した
-  - 先頭の数字文字列がバージョンになるので、時系列に昇順にならないといけない。
-- ダウングレードの処理も必ず書く
-
-### 参考
-
-[migration.rdoc](http://sequel.jeremyevans.net/rdoc/files/doc/migration_rdoc.html)
-
-# Mail
-
-## Mailcatcher
-
-開発環境のみ
-
-http://localhost:1080/
-
-# 環境変数について
-
-環境変数を追加した場合に以下のファイルの設定変更が必要かもです。
-
-```
-ibj_reserve/cfn-ecs.yml
-ibj_reserve/docker-compose.yml
-ibj_reserve/.github/workflows/deploy_staging.yml
-ibj_reserve/.github/workflows/ruby.yml
-ibj_reserve/deploy/deploy.sh
-ibj_reserve/deploy/taskdef.json.staging
-
-# 開発環境のみ
-ibj_reserve/.env
-```
-
-また Github での環境変数追加設定も必要です。
-
-`Settings -> Secrets -> Actions` から `New repository secret` で追加。
-
-# RSpec について
-
-## 下記テンプレートについて
-
-- 実際に書くテストによってテンプレートの文言などは調整をお願いします。
-
-```
-# frozen_string_literal: true
-
-require ''
-
-RSpec.describe Class名 do
-  context '#メソッド名' do
-    context '〇〇の場合' do
-      it '〇〇を〇〇できる' do
-        expect()
-      end
-    end
-  end
-end
-```
-
-## Git Commit Guidelines（IBR）
-
-### Guidelines の目的
-
-**① コード変更意図の早期理解（未来の実装者/運用者のため）**
-
-- コードの変更意図をわかりやすく伝えることができる
-
-**② レビュー時間の短縮（レビュワーのため）**
-
-- コードの変更意図をわかりやすく伝えることができる
-
-**③push 後のコミットの変更の容易化（実装者/自分のため）**
-
-- push 後に変更があった場合、revert して修正するのが簡単になる
-
-### コミット時の Point
-
-- コミットの粒度を小さくする
-- コミットメッセージに接頭辞をつける
-- コミットメッセージには、「対象」と「動詞」を含める
-- コミットメッセージには、「何のために」を含める
-- コミットメッセージは、端的に
-
-#### コミットの粒度を小さくする
-
-```
-【悪い例】
-- 1つのコミットに、複数機能や関連がない複数箇所の修正を含める
-
-【良い例】
-- 1つのコミットには、1つの機能や1つの修正を含める
-
-【修正理由】
-- コードの変更意図がわからなくなってしまう
-```
-
-#### コミットメッセージに接頭辞をつける
-
-- [Add]：新機能や新しいファイルの追加
-- [Update]：既存の機能の変更や修正
-- [Fix]：バグ修正
-- [Remove]：不要なコードやファイルの削除
-- [Refactor]：コードのリファクタリング
-- [Test（or Rspec）]：テストコードの追加や修正
-- [Docs]：ドキュメントの変更
-- [Chore（or Config）]：ビルドプロセスや設定ファイルの変更
-
-```
-【悪い例】
-ログイン画面の修正
-
-【良い例】
-[Fix]ログイン画面の修正
-→バグ修正だと一目でわかる。
-
-[Update]ログイン画面の修正
-→既存機能を新しいものに変更・修正したことが一目でわかる。
-
-【修正理由】
-- レビュワーがコミットの意図を理解するまで時間がかかってしまう。
-```
-
-#### コミットメッセージには、「対象」と「動詞（or 動詞の名詞 ver.）」を含める
-
-```
-【悪い例】
-[Fix]修正
-
-【良い例】
-[Fix]ログイン機能の修正
-→対象は「ログイン機能」、動詞は「修正」。
-
-【修正理由】
-- レビュワーがどのコミットから読めば良いのか判断する時間がかかってしまうため。1つ1つのコミットを確認しなければいけない。
-```
-
-#### コミットメッセージには、「何のために（コードの変更意図）」を含める
-
-```
-【悪い例】
-[Fix]ログイン機能の修正
-
-【良い例】
-[Fix]正しくログインできるように、ログイン機能を修正
-
-【修正理由】
-- 「何のために」修正をしたかをコミットメッセージに含めることで、実装者の意図をレビュワーが素早く理解することができます。
-```
-
-#### コミットメッセージは、端的に
-
-```
-【悪い例】
-[Fix]ユーザーがログインできない原因箇所を修正し、正しくログインできるようにログイン機能を修正
-
-【良い例】
-[Fix]正しくログインできるように、ログイン機能を修正
-
-【修正理由】
-- 長いコミットメッセージは、レビュー者を混乱させたり、レビュー時間の増加につながるため、端的なコミットを心がけましょう。
-- 変更前の状態はコードを読めばわかるため、修正後・変更後の状態のみを書くのが良いです。
-- コミットメッセージが長くなる場合は、コミットの粒度を小さくすることを検討しましょう。
-```
+[https://ibjapan.sharepoint.com/sites/IBJShareDrive/Shared Documents/Forms/AllItems.aspx?ct=1717994042372&or=Teams-HL&ga=1&id=%2Fsites%2FIBJShareDrive%2FShared Documents%2FDrive\_制作開発マーケティング部%2FIBR&viewid=1ec4ae1f-8544-4e2d-8f40-0f6ad5680875](https://ibjapan.sharepoint.com/sites/IBJShareDrive/Shared%20Documents/Forms/AllItems.aspx?ct=1717994042372&or=Teams%2DHL&ga=1&id=%2Fsites%2FIBJShareDrive%2FShared%20Documents%2FDrive%5F%E5%88%B6%E4%BD%9C%E9%96%8B%E7%99%BA%E3%83%9E%E3%83%BC%E3%82%B1%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E9%83%A8%2FIBR&viewid=1ec4ae1f%2D8544%2D4e2d%2D8f40%2D0f6ad5680875)
