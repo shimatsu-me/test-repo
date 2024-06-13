@@ -2,7 +2,7 @@
 
 リポジトリ（GitHub）：https://github.com/ibj-labo
 
-![Screenshot 2024-06-10 at 11.20.45.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/cd3e7b8b-acfa-494d-9b4e-166ac30e6b36/763ac292-e8d0-4c00-9926-d2e2e654fbcd/Screenshot_2024-06-10_at_11.20.45.png)
+<img width="535" alt="Screenshot 2024-06-10 at 11 20 45" src="https://github.com/shimatsu-me/test-repo/assets/155062610/12467c0a-7494-4e1a-9b6f-88dfae5b9f46">
 
 # サービス概要と主要な仕様（機能）
 
