@@ -37,7 +37,7 @@
 - [Refactor]：コードのリファクタリング
 - [Test（or Rspec）]：テストコードの追加や修正
 - [Docs]：ドキュメントの変更
-- [README]: README.mdの変更
+- [README]：README.md の変更
 - [Chore（or Config）]：ビルドプロセスや設定ファイルの変更
 
 ```
