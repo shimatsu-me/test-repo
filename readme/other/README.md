@@ -1,3 +1,9 @@
+## Get Starting
+
+<code>
+bundle exec rackup config.ru
+</code>
+
 # 環境変数について
 
 環境変数を追加した場合に以下のファイルの設定変更が必要かもです。
