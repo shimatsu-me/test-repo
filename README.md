@@ -1,3 +1,12 @@
+# 各 README のパス
+
+- [環境構築](/readme/setup/README.md)
+- [コマンド](/readme/cmd/README.md)
+- [テスト](/readme/test/README.md)
+- [Git](/readme/git/README.md)
+- [DDD](/readme/ddd/README.md)
+- [その他](/readme/other/README.md)
+
 # 【IBR\_飲食】リポジトリとサービス仕様のミニマムガイド（+運用ドキュメント）
 
 リポジトリ（GitHub）：https://github.com/ibj-labo
