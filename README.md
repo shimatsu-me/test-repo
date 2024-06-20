@@ -44,15 +44,15 @@
 
 ## [管理者フロー]利用サービス登録 ON/OFF → 店舗の表示/非表示
 
-<img width="787" alt="Screenshot 2024-06-13 at 11 30 02" src="https://github.com/shimatsu-me/test-repo/assets/155062610/9c53f35d-8e1d-416a-8aa8-c7e373634b3c">
+https://www.figma.com/design/HC0owIMx6OEgiaAaX6FW6c/%5B%E7%AE%A1%E7%90%86%E8%80%85%E3%83%95%E3%83%AD%E3%83%BC%5D%E5%88%A9%E7%94%A8%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E7%99%BB%E9%8C%B2ON%2FOFF-%E2%86%92%E5%BA%97%E8%88%97%E3%81%AE%E8%A1%A8%E7%A4%BA%2F%E9%9D%9E%E8%A1%A8%E7%A4%BA?node-id=0-1&t=3qrT80Km2kAMO9A4-1
 
 ## [管理者フロー]店舗の予約種類の変更（リクエスト予約/即時予約/アフィリエイト予約）
 
-<img width="554" alt="Screenshot 2024-06-20 at 11 35 54" src="https://github.com/shimatsu-me/test-repo/assets/155062610/3fd85323-74f8-4ccf-81fe-dc72c4cbd00d">
+https://www.figma.com/design/DvxNQ9lzkQtwhKlYKMMwYa/%5B%E7%AE%A1%E7%90%86%E8%80%85%E3%83%95%E3%83%AD%E3%83%BC%5D%E5%BA%97%E8%88%97%E3%81%AE%E4%BA%88%E7%B4%84%E7%A8%AE%E9%A1%9E%E3%81%AE%E5%A4%89%E6%9B%B4%EF%BC%88%E3%83%AA%E3%82%AF%E3%82%A8%E3%82%B9%E3%83%88%E4%BA%88%E7%B4%84%2F%E5%8D%B3%E6%99%82%E4%BA%88%E7%B4%84%2F%E3%82%A2%E3%83%95%E3%82%A3%E3%83%AA%E3%82%A8%E3%82%A4%E3%83%88%E4%BA%88%E7%B4%84%EF%BC%89?t=okTluMoa2d8l4vXo-1
 
 ## [管理者フロー]「2 軒目デート」タグ
 
-<img width="815" alt="Screenshot 2024-06-20 at 11 03 30" src="https://github.com/shimatsu-me/test-repo/assets/155062610/72bec5a5-d209-491d-a2b8-9c296f7a1109">
+＜＜＜ 準備中 ＞＞＞
 
 ## [ユーザーフロー]診断コンテンツ
 
