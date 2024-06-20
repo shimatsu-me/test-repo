@@ -13,6 +13,8 @@
 
 ※「リポジトリ概要図」とは、「IBR\_飲食」のフロントエンドとバックエンドのコードが、どのリポジトリで管理されているかを視覚的にわかりやすくした図です。各コードを管理しているリポジトリ名（repo）と、フロントエンドが使用している API のエンドポイント名（endpoint）を記載しています。
 
+※予約システム API がフォトでも使用されていることを示すため、以下の図にはフォトのリポジトリも掲載しています。
+
 <img width="448" alt="Screenshot 2024-06-17 at 14 33 37" src="https://github.com/shimatsu-me/test-repo/assets/155062610/4cb32a1f-129a-4fa6-945f-65ffa400d6c8">
 
 リポジトリ（GitHub）：https://github.com/ibj-labo
