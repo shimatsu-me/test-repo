@@ -9,11 +9,25 @@
 
 # 【IBR\_飲食】リポジトリとサービス仕様のミニマムガイド（+運用ドキュメント）
 
+## リポジトリ概要図
+
+※「リポジトリ概要図」とは、「IBR\_飲食」のフロントエンドとバックエンドのコードが、どのリポジトリで管理されているかを視覚的にわかりやすくした図です。各コードを管理しているリポジトリ名（repo）と、フロントエンドが使用している API のエンドポイント名（endpoint）を記載しています。
+
+<img width="448" alt="Screenshot 2024-06-17 at 14 33 37" src="https://github.com/shimatsu-me/test-repo/assets/155062610/4cb32a1f-129a-4fa6-945f-65ffa400d6c8">
+
 リポジトリ（GitHub）：https://github.com/ibj-labo
 
-<img width="535" alt="Screenshot 2024-06-10 at 11 20 45" src="https://github.com/shimatsu-me/test-repo/assets/155062610/12467c0a-7494-4e1a-9b6f-88dfae5b9f46">
-
 # サービス概要と主要な仕様（機能）
+
+## 「主要な」とは
+
+- エンジニアが IBR\_飲食の開発に携わるときに、事前に知っておかなければ、開発をスムーズに進められない機能
+
+### 例：利用サービス登録
+
+「iBR 本部管理画面＞利用サービス登録」で店舗に利用サービスを登録しておかないと、ToC 画面に店舗が表示されない。
+
+## 概要
 
 - IBR は、「web（飲食）」「photo」「omiai」の 3 つの管理システムがある
 
@@ -24,19 +38,25 @@
 - 「ToC 画面」に店舗を表示するためには、「本部管理画面」で、店舗に「利用サービス登録」を行う必要がある
 - 「web（飲食）」でユーザーが予約する際の「予約の種類」は、リクエスト予約と即時予約がある
   - リクエスト予約：IBR システムを使用した予約（IBR の予約 API を使用して予約します）
-    - 店舗を予約するボタンの表示：予約確認へ進む
-  - 即時予約：テーブルチェックシステムを使用した予約（TableCheck API を使用して予約します）
-    - 店舗を予約するボタンの表示：予約サイトに移動する
+  - 即時予約：TableCheck の予約システムを使用した予約（TableCheck API を使用して予約します）
 
 # 主要仕様のミニマム業務フロー図
 
 ## [管理者フロー]利用サービス登録 ON/OFF → 店舗の表示/非表示
 
-![Screenshot 2024-06-13 at 11.30.02.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/cd3e7b8b-acfa-494d-9b4e-166ac30e6b36/d311cfd6-67ec-41da-bc30-0e1332b10330/Screenshot_2024-06-13_at_11.30.02.png)
+<img width="787" alt="Screenshot 2024-06-13 at 11 30 02" src="https://github.com/shimatsu-me/test-repo/assets/155062610/9c53f35d-8e1d-416a-8aa8-c7e373634b3c">
 
-## [ユーザーフロー]店舗の予約（リクエスト予約/即時予約）と使用される予約システム
+## [管理者フロー]店舗の予約種類の変更（リクエスト予約/即時予約/アフィリエイト予約）
 
-＜＜＜ 準備中：「店舗の予約（リクエスト予約/即時予約）と使用される予約システム（主要仕様のミニマム業務フロー図）画像」 ＞＞＞
+<img width="554" alt="Screenshot 2024-06-20 at 11 35 54" src="https://github.com/shimatsu-me/test-repo/assets/155062610/3fd85323-74f8-4ccf-81fe-dc72c4cbd00d">
+
+## [管理者フロー]「2 軒目デート」タグ
+
+<img width="815" alt="Screenshot 2024-06-20 at 11 03 30" src="https://github.com/shimatsu-me/test-repo/assets/155062610/72bec5a5-d209-491d-a2b8-9c296f7a1109">
+
+## [ユーザーフロー]診断コンテンツ
+
+＜＜＜ 準備中 ＞＞＞
 
 # **開発・運用環境**
 
@@ -78,3 +98,10 @@
 ## テストケースを管理する Excel ファイル
 
 [https://ibjapan.sharepoint.com/sites/IBJShareDrive/Shared Documents/Forms/AllItems.aspx?ct=1717994042372&or=Teams-HL&ga=1&id=%2Fsites%2FIBJShareDrive%2FShared Documents%2FDrive\_制作開発マーケティング部%2FIBR&viewid=1ec4ae1f-8544-4e2d-8f40-0f6ad5680875](https://ibjapan.sharepoint.com/sites/IBJShareDrive/Shared%20Documents/Forms/AllItems.aspx?ct=1717994042372&or=Teams%2DHL&ga=1&id=%2Fsites%2FIBJShareDrive%2FShared%20Documents%2FDrive%5F%E5%88%B6%E4%BD%9C%E9%96%8B%E7%99%BA%E3%83%9E%E3%83%BC%E3%82%B1%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E9%83%A8%2FIBR&viewid=1ec4ae1f%2D8544%2D4e2d%2D8f40%2D0f6ad5680875)
+
+## ユビキタス言語
+
+- 即時予約：TableCheck の予約システム（外部サービス）を使用した店舗の予約
+- リクエスト予約：IBR の予約システム（IBJ の自社サービス）を使用した店舗の予約
+- 診断コンテンツ：
+- グラフコンテンツ：
