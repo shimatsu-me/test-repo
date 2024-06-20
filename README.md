@@ -52,7 +52,7 @@ https://www.figma.com/design/DvxNQ9lzkQtwhKlYKMMwYa/%5B%E7%AE%A1%E7%90%86%E8%80%
 
 ## [管理者フロー]「2 軒目デート」タグ
 
-＜＜＜ 準備中 ＞＞＞
+https://cacoo.com/diagrams/OGeJeuKk4NiMlk69/69385?reload_rt=1718872797101_0&
 
 ## [ユーザーフロー]店舗の予約種類の変更（リクエスト予約/即時予約/アフィリエイト予約）
 
