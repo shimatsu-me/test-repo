@@ -99,6 +99,10 @@ https://www.figma.com/design/DvxNQ9lzkQtwhKlYKMMwYa/%5B%E7%AE%A1%E7%90%86%E8%80%
 
 [https://ibjapan.sharepoint.com/sites/IBJShareDrive/Shared Documents/Forms/AllItems.aspx?ct=1717994042372&or=Teams-HL&ga=1&id=%2Fsites%2FIBJShareDrive%2FShared Documents%2FDrive\_制作開発マーケティング部%2FIBR&viewid=1ec4ae1f-8544-4e2d-8f40-0f6ad5680875](https://ibjapan.sharepoint.com/sites/IBJShareDrive/Shared%20Documents/Forms/AllItems.aspx?ct=1717994042372&or=Teams%2DHL&ga=1&id=%2Fsites%2FIBJShareDrive%2FShared%20Documents%2FDrive%5F%E5%88%B6%E4%BD%9C%E9%96%8B%E7%99%BA%E3%83%9E%E3%83%BC%E3%82%B1%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E9%83%A8%2FIBR&viewid=1ec4ae1f%2D8544%2D4e2d%2D8f40%2D0f6ad5680875)
 
+## [試用中]テストケースを管理する Notion
+
+https://www.notion.so/49c32953850747f88fcb7e975da886c0?pvs=21
+
 ## ユビキタス言語
 
 - 即時予約：TableCheck の予約システム（外部サービス）を使用した店舗の予約
