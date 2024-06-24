@@ -38,7 +38,7 @@
 
 ## 「主要仕様」とは
 
-エンジニアが IBR\_飲食の開発に携わるときに、事前に知っておかなければ、開発をスムーズに進められない仕様や機能のこと。
+エンジニアが IBR\_飲食の開発に携わるときに、事前に知っておかなければ、開発をスムーズに進められない仕様のこと。
 
 ### 例：利用サービス登録
 
@@ -46,11 +46,11 @@
 
 ## 管理者フロー
 
-[利用サービス登録 ON/OFF → 店舗の表示/非表示](https://cacoo.com/diagrams/OGeJeuKk4NiMlk69/69385?reload_rt=1718872797101_0&)
+[利用サービス登録 ON/OFF → 店舗の表示/非表示](https://cacoo.com/diagrams/OGeJeuKk4NiMlk69/69385)
 
-[店舗の予約種類の変更（リクエスト予約/即時予約/アフィリエイト予約）](https://cacoo.com/diagrams/OGeJeuKk4NiMlk69/69385?reload_rt=1718872797101_0&)
+[店舗の予約種類の変更（リクエスト予約/即時予約/アフィリエイト予約）](https://cacoo.com/diagrams/BSIOCkyXLooNFz6C/A5658)
 
-[「2 軒目デート」タグ](https://cacoo.com/diagrams/OGeJeuKk4NiMlk69/69385?reload_rt=1718872797101_0&)
+[「2 軒目デート」タグ](https://cacoo.com/diagrams/ia26Nv6c3IQgIC1H/4D1BC)
 
 ## ユーザーフロー
 
