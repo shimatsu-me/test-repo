@@ -17,7 +17,7 @@
 
 ※予約システム API がフォトでも使用されていることを示すため、以下の図にはフォトのリポジトリも掲載しています。
 
-<img width="448" alt="Screenshot 2024-06-17 at 14 33 37" src="https://github.com/shimatsu-me/test-repo/assets/155062610/4cb32a1f-129a-4fa6-945f-65ffa400d6c8">
+<img width="515" alt="Screenshot 2024-06-24 at 15 42 34" src="https://github.com/shimatsu-me/test-repo/assets/155062610/55048e8e-13c5-4851-9d17-14f14d10ed38">
 
 リポジトリ（GitHub）：https://github.com/ibj-labo
 
