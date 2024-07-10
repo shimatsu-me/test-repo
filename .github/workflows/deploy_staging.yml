@@ -1,10 +1,10 @@
 # test
-name: Deploy to staging
+name: Deploy to main
 
 on:
   push:
     branches:
-      - staging
+      - main
 
 jobs:
   deploy:
