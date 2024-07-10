@@ -1,0 +1,19 @@
+name: Deploy to staging
+
+on:
+  push:
+    branches:
+      - staging
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build, tag, and push image to Amazon ECR
+        env:
+          TABLE_CHECK_WEB_BOOKING_URL: ${{secrets.TABLE_CHECK_WEB_BOOKING_URL}}
+        run: |
+          /bin/bash deploy/deploy.sh --noprompt --staging
