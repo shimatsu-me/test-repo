@@ -1,5 +1,5 @@
 #!/bin/bash
 
 echo '<<<<<<ここです！<<<<<<<<'
-echo `${TABLE_CHECK_WEB_BOOKING_URL} | base64`
+echo "$(echo ${TABLE_CHECK_WEB_BOOKING_URL} | base64 --decode)"
 echo '<<<<<<ここです！<<<<<<<<'
