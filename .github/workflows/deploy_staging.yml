@@ -17,4 +17,5 @@ jobs:
         env:
           TABLE_CHECK_WEB_BOOKING_URL: ${{secrets.TABLE_CHECK_WEB_BOOKING_URL}}
         run: |
+          export TABLE_CHECK_WEB_BOOKING_URL="${TABLE_CHECK_WEB_BOOKING_URL}"
           /bin/bash deploy/deploy.sh --noprompt --staging
