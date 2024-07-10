@@ -17,7 +17,4 @@ jobs:
         env:
           TABLE_CHECK_WEB_BOOKING_URL: ${{secrets.TABLE_CHECK_WEB_BOOKING_URL}}
         run: |
-          echo ${{ env.TABLE_CHECK_WEB_BOOKING_URL }}
-          echo ${{ env.TABLE_CHECK_WEB_BOOKING_URL }} | base64
-          echo ${{ env.TABLE_CHECK_WEB_BOOKING_URL }} | base64 --decode
           /bin/bash deploy/deploy.sh --noprompt --staging
